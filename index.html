@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loycamia - Muebles a Medida</title>
+    <title>Loycamia - Muebles Artesanales</title>
     <style>
         :root {
             --primary: #8B5A2B; /* Tono madera cálido */
@@ -129,11 +129,12 @@
         }
 
         .card-img {
-            height: 220px;
+            height: 240px;
             background-size: cover;
             background-position: center;
         }
 
+        /* FOTOS DE MUEBLES ARTESANALES DE MADERA SÓLIDA */
         .img-1 { background-image: url('https://unsplash.com'); }
         .img-2 { background-image: url('https://unsplash.com'); }
         .img-3 { background-image: url('https://unsplash.com'); }
@@ -144,12 +145,14 @@
 
         .card-content h3 {
             margin-bottom: 10px;
+            color: var(--primary);
         }
 
         .card-content p {
             color: var(--gray);
         }
 
+        /* Botón de WhatsApp flotante */
         .whatsapp-btn {
             position: fixed;
             bottom: 30px;
@@ -160,8 +163,11 @@
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
             z-index: 1000;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
         }
 
         footer {
@@ -191,8 +197,8 @@
     </header>
 
     <section class="hero">
-        <h1>Muebles a medida que transforman tu hogar</h1>
-        <p>Diseño exclusivo y carpintería moderna de alta calidad para dar vida a tus espacios.</p>
+        <h1>Muebles Artesanales a Medida</h1>
+        <p>Carpintería de alta calidad en madera sólida para dar vida y calidez a tus espacios.</p>
         <a href="#productos" class="btn-catalog">Ver Catálogo</a>
     </section>
 
@@ -202,29 +208,29 @@
             <div class="card">
                 <div class="card-img img-1"></div>
                 <div class="card-content">
-                    <h3>Muebles para el Hogar</h3>
-                    <p>Línea exclusiva de livings, comedores y racks diseñados para brindar calidez y estilo a tu espacio familiar.</p>
+                    <h3>Comedores y Cubiertas</h3>
+                    <p>Mesas artesanales y cubiertas de madera sólida tratada, fabricadas para convertirse en el centro de tu hogar.</p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-img img-2"></div>
                 <div class="card-content">
-                    <h3>Optimización de Espacios</h3>
-                    <p>Escritorios plegables, repisas y clósets inteligentes diseñados a medida para aprovechar cada metro cuadrado.</p>
+                    <h3>Racks y Muebles de Living</h3>
+                    <p>Diseños exclusivos que mezclan la veta natural de la madera con estructuras firmes y funcionales.</p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-img img-3"></div>
                 <div class="card-content">
-                    <h3>Terrazas y Exterior</h3>
-                    <p>Mobiliario resistente fabricado en maderas tratadas y nativas duraderas, ideales para el exterior.</p>
+                    <h3>Escritorios y Oficina</h3>
+                    <p>Espacios de trabajo cómodos y elegantes con acabados perfectos que destacan el trabajo hecho a mano.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pon aquí tu número de WhatsApp con el código de país (ejemplo: 56912345678) -->
-   <a href="https://wa.me" class="whatsapp-btn" target="_blank">
+    <!-- Enlace directo a tu WhatsApp Real -->
+    <a href="https://wa.me" class="whatsapp-btn" target="_blank">
         💬 Cotizar por WhatsApp
     </a>
 
