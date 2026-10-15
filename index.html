@@ -3,62 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loycamia</title>
+    <title>Loycamia - Muebles a Medida</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        :root {
+            --primary: #8B5A2B; /* Tono madera cálido */
+            --dark: #222222;    /* Gris oscuro elegante */
+            --light: #F9F6F0;   /* Fondo claro sofisticado */
+            --white: #ffffff;
+            --gray: #777777;
+        }
+
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            background-color: #f4f7f6;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
         }
-        .container {
-            text-align: center;
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            max-width: 500px;
-            width: 90%;
-        }
-        h1 {
-            color: #2c3e50;
-            margin-bottom: 10px;
-            font-size: 2.5rem;
-        }
-        p {
-            color: #7f8c8d;
-            font-size: 1.1rem;
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
             line-height: 1.6;
         }
-        .btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 24px;
-            background-color: #3498db;
-            color: white;
+
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
             text-decoration: none;
-            border-radius: 25px;
-            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(34,34,34,0.6), rgba(34,34,34,0.6)), url('https://unsplash.com') no-repeat center center/cover;
+            height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .btn-catalog {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
             transition: background 0.3s;
         }
-        .btn:hover {
-            background-color: #2980b9;
+
+        .products-section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .products-section h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .card-img {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .img-1 { background-image: url('https://unsplash.com'); }
+        .img-2 { background-image: url('https://unsplash.com'); }
+        .img-3 { background-image: url('https://unsplash.com'); }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-content h3 {
+            margin-bottom: 10px;
+        }
+
+        .card-content p {
+            color: var(--gray);
+        }
+
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .navbar { flex-direction: column; gap: 15px; }
+            .hero h1 { font-size: 2.2rem; }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Loycamia</h1>
-        <p>¡Bienvenidos a nuestro sitio web oficial! Estamos construyendo algo increíble para ti. Muy pronto conocerás todas nuestras novedades, productos y servicios.</p>
-        <a href="https://wa.me" class="btn">Contáctanos por WhatsApp</a>
-    </div>
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">Loycamia</a>
+            <ul class="nav-links">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#productos">Muebles</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Muebles a medida que transforman tu hogar</h1>
+        <p>Diseño exclusivo y carpintería moderna de alta calidad para dar vida a tus espacios.</p>
+        <a href="#productos" class="btn-catalog">Ver Catálogo</a>
+    </section>
+
+    <section class="products-section" id="productos">
+        <h2>Nuestras Líneas</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-img img-1"></div>
+                <div class="card-content">
+                    <h3>Muebles para el Hogar</h3>
+                    <p>Línea exclusiva de livings, comedores y racks diseñados para brindar calidez y estilo a tu espacio familiar.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img img-2"></div>
+                <div class="card-content">
+                    <h3>Optimización de Espacios</h3>
+                    <p>Escritorios plegables, repisas y clósets inteligentes diseñados a medida para aprovechar cada metro cuadrado.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img img-3"></div>
+                <div class="card-content">
+                    <h3>Terrazas y Exterior</h3>
+                    <p>Mobiliario resistente fabricado en maderas tratadas y nativas duraderas, ideales para el exterior.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pon aquí tu número de WhatsApp con el código de país (ejemplo: 56912345678) -->
+    <a href="https://wa.me" class="whatsapp-btn" target="_blank">
+        💬 Cotizar por WhatsApp
+    </a>
+
+    <footer>
+        <p>© 2026 Loycamia - Diseños exclusivos a medida</p>
+    </footer>
 
 </body>
 </html>
