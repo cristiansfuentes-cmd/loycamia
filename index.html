@@ -3,17 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loycamia - Muebles Artesanales a Medida en Chile</title>
-    <!-- Palabras clave para que Google te encuentre -->
-    <meta name="description" content="Loycamia: Fabricación de muebles artesanales de madera a medida. Comedores, escritorios rústicos y terrazas exclusivas de alta calidad.">
-    <meta name="keywords" content="muebles artesanales, muebles a medida, carpinteria, muebles rusticos, mesas de madera, loycamia">
+    <title>Loycamia - Muebles Artesanales a Medida</title>
     <style>
         :root {
-            --primary: #8B5A2B;
-            --dark: #222222;
-            --light: #F9F6F0;
+            --wood-dark: #5C3A21;
+            --wood-light: #8B5A2B;
+            --bg-site: #FDFBF7;
+            --text-main: #2C2520;
             --white: #ffffff;
-            --gray: #777777;
+            --shadow: rgba(92, 58, 33, 0.15);
         }
 
         * {
@@ -24,38 +22,56 @@
 
         body {
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--light);
-            color: var(--dark);
+            background-color: var(--bg-site);
+            color: var(--text-main);
             line-height: 1.6;
         }
 
         header {
             background-color: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 15px var(--shadow);
             position: sticky;
             top: 0;
             z-index: 100;
         }
 
         .navbar {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px;
+            padding: 15px 20px;
         }
 
         .logo {
             font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary);
+            font-weight: 800;
+            color: var(--wood-dark);
             text-decoration: none;
             letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--wood-light);
         }
 
         .hero {
-            background: linear-gradient(rgba(34,34,34,0.5), rgba(34,34,34,0.5)), url('https://unsplash.com') no-repeat center center/cover;
+            background: linear-gradient(rgba(44, 37, 32, 0.6), rgba(44, 37, 32, 0.6)), url('https://unsplash.com') no-repeat center center/cover;
             height: 45vh;
             display: flex;
             flex-direction: column;
@@ -69,56 +85,75 @@
         .hero h1 {
             font-size: 2.8rem;
             margin-bottom: 15px;
-            font-weight: 600;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
 
         .hero p {
             font-size: 1.2rem;
+            margin-bottom: 25px;
             max-width: 600px;
         }
 
-        /* Sección de contacto en pantalla */
-        .contact-bar {
-            background-color: #25d366;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            font-size: 1.3rem;
-            font-weight: bold;
+        .btn-catalog {
+            display: inline-block;
+            background-color: var(--wood-light);
+            color: var(--white);
+            padding: 12px 35px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
-        .contact-bar a {
-            color: white;
-            text-decoration: underline;
+        .btn-catalog:hover {
+            background-color: var(--wood-dark);
         }
 
         .products-section {
-            max-width: 1200px;
-            margin: 40px auto;
+            max-width: 1100px;
+            margin: 50px auto;
             padding: 0 20px;
         }
 
         .products-section h2 {
             text-align: center;
             font-size: 2.2rem;
+            margin-bottom: 10px;
+            color: var(--wood-dark);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--wood-light);
             margin-bottom: 40px;
+            font-style: italic;
         }
 
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 35px;
         }
 
         .card {
             background-color: var(--white);
-            border-radius: 8px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 6px 20px var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px var(--shadow);
         }
 
         .card-img {
-            height: 240px;
+            height: 250px;
             background-size: cover;
             background-position: center;
         }
@@ -132,19 +167,52 @@
         }
 
         .card-content h3 {
-            margin-bottom: 10px;
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            color: var(--wood-dark);
         }
 
         .card-content p {
-            color: var(--gray);
+            color: #555555;
+            font-size: 0.95rem;
+        }
+
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            padding: 15px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.08);
         }
 
         footer {
-            background-color: var(--dark);
+            background-color: var(--text-main);
             color: var(--white);
             text-align: center;
-            padding: 30px 20px;
-            margin-top: 40px;
+            padding: 40px 20px;
+            margin-top: 60px;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .navbar { flex-direction: column; gap: 15px; }
+            .hero h1 { font-size: 2rem; }
+            .whatsapp-btn { bottom: 20px; right: 20px; padding: 12px 20px; font-size: 1rem; }
         }
     </style>
 </head>
@@ -153,49 +221,53 @@
     <header>
         <nav class="navbar">
             <a href="#" class="logo">Loycamia</a>
+            <ul class="nav-links">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#productos">Catálogo</a></li>
+            </ul>
         </nav>
     </header>
 
-    <!-- Barra de contacto fija arriba en pantalla -->
-    <div class="contact-bar">
-        📞 Cotizaciones al WhatsApp: +56 9 8274 2192
-    </div>
-
     <section class="hero">
-        <h1>Muebles Artesanales Loycamia</h1>
-        <p>Diseño exclusivo en madera y carpintería a medida de alta calidad.</p>
+        <h1>Muebles Artesanales Exclusivos</h1>
+        <p>Carpintería a medida con acabados de alta calidad para darle calidez y diseño único a tus espacios.</p>
+        <a href="#productos" class="btn-catalog">Ver Catálogo</a>
     </section>
 
-    <section class="products-section">
-        <h2>Nuestras Líneas de Fabricación</h2>
+    <section class="products-section" id="productos">
+        <h2>Línea de Fabricación</h2>
+        <p class="section-subtitle">Trabajos hechos a mano con maderas seleccionadas</p>
         <div class="grid">
             <div class="card">
                 <div class="card-img img-1"></div>
                 <div class="card-content">
                     <h3>Comedores y Salón</h3>
-                    <p>Mesas sólidas, sillas y racks artesanales fabricados a mano, perfectos para lucir la veta natural de la madera.</p>
+                    <p>Mesas robustas, cubiertas cepilladas y racks artesanales diseñados para destacar la veta natural de la madera.</p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-img img-2"></div>
                 <div class="card-content">
-                    <h3>Escritorios y Oficina</h3>
-                    <p>Espacios de trabajo funcionales con maderas seleccionadas, combinando acabados rústicos y modernos.</p>
+                    <h3>Escritorios y Home Office</h3>
+                    <p>Mobiliario funcional e inteligente que combina la resistencia de la madera rústica con líneas modernas para tu comodidad diaria.</p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-img img-3"></div>
                 <div class="card-content">
-                    <h3>Mobiliario a Medida</h3>
-                    <p>Diseñamos y construimos el mueble que imaginas para tus espacios con máxima durabilidad.</p>
+                    <h3>Proyectos Especiales</h3>
+                    <p>Diseñamos y fabricamos cualquier estructura o mueble que imagines a la medida exacta de tu espacio y presupuesto.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <a href="https://wa.me" class="whatsapp-btn" target="_blank">
+        💬 Cotizar por WhatsApp
+    </a>
+
     <footer>
-        <p>© 2026 Loycamia - Diseños exclusivos a medida en Chile</p>
-        <p style="margin-top: 10px; font-size: 0.8rem; color: #aaa;">Contacto directo: +56982742192</p>
+        <p>© 2026 Loycamia - Muebles de Madera & Diseños a Medida</p>
     </footer>
 
 </body>
