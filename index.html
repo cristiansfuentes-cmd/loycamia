@@ -3,271 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loycamia - Muebles Artesanales a Medida</title>
+    <title>Loycamia - Muebles Artesanales</title>
     <style>
-        :root {
-            --wood-dark: #5C3A21;
-            --wood-light: #8B5A2B;
-            --bg-site: #FDFBF7;
-            --text-main: #2C2520;
-            --white: #ffffff;
-            --shadow: rgba(92, 58, 33, 0.15);
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-site);
-            color: var(--text-main);
-            line-height: 1.6;
-        }
-
-        header {
-            background-color: var(--white);
-            box-shadow: 0 2px 15px var(--shadow);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .navbar {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--wood-dark);
-            text-decoration: none;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 20px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-main);
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--wood-light);
-        }
-
-        .hero {
-            background: linear-gradient(rgba(44, 37, 32, 0.6), rgba(44, 37, 32, 0.6)), url('https://unsplash.com') no-repeat center center/cover;
-            height: 45vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: var(--white);
-            padding: 20px;
-        }
-
-        .hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 15px;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 25px;
-            max-width: 600px;
-        }
-
-        .btn-catalog {
-            display: inline-block;
-            background-color: var(--wood-light);
-            color: var(--white);
-            padding: 12px 35px;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: background 0.3s;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-
-        .btn-catalog:hover {
-            background-color: var(--wood-dark);
-        }
-
-        .products-section {
-            max-width: 1100px;
-            margin: 50px auto;
-            padding: 0 20px;
-        }
-
-        .products-section h2 {
-            text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-            color: var(--wood-dark);
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: var(--wood-light);
-            margin-bottom: 40px;
-            font-style: italic;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 35px;
-        }
-
-        .card {
-            background-color: var(--white);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 6px 20px var(--shadow);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 25px var(--shadow);
-        }
-
-        .card-img {
-            height: 250px;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .img-1 { background-image: url('https://unsplash.com'); }
-        .img-2 { background-image: url('https://unsplash.com'); }
-        .img-3 { background-image: url('https://unsplash.com'); }
-
-        .card-content {
-            padding: 25px;
-        }
-
-        .card-content h3 {
-            font-size: 1.4rem;
-            margin-bottom: 12px;
-            color: var(--wood-dark);
-        }
-
-        .card-content p {
-            color: #555555;
-            font-size: 0.95rem;
-        }
-
-        .whatsapp-btn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25d366;
-            color: white;
-            padding: 15px 28px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-            z-index: 1000;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: transform 0.3s;
-        }
-
-        .whatsapp-btn:hover {
-            transform: scale(1.08);
-        }
-
-        footer {
-            background-color: var(--text-main);
-            color: var(--white);
-            text-align: center;
-            padding: 40px 20px;
-            margin-top: 60px;
-            font-size: 0.95rem;
-        }
-
-        @media (max-width: 768px) {
-            .navbar { flex-direction: column; gap: 15px; }
-            .hero h1 { font-size: 2rem; }
-            .whatsapp-btn { bottom: 20px; right: 20px; padding: 12px 20px; font-size: 1rem; }
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: #F9F6F0; color: #222222; line-height: 1.6; text-align: center; }
+        header { background-color: #ffffff; padding: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .logo { font-size: 2rem; font-weight: bold; color: #8B5A2B; text-decoration: none; }
+        .hero { background-color: #8B5A2B; color: #ffffff; padding: 60px 20px; margin-bottom: 40px; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 20px; }
+        .card { background: #ffffff; border: 2px solid #8B5A2B; border-radius: 8px; padding: 30px 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .card h3 { color: #8B5A2B; margin-bottom: 15px; font-size: 1.5rem; }
+        .card p { color: #555555; font-size: 1rem; }
+        .contact-section { background-color: #ffffff; padding: 40px 20px; margin: 40px auto; border-radius: 8px; max-width: 600px; border: 1px solid #ddd; }
+        .whatsapp-link { display: inline-block; background-color: #25D366; color: white; padding: 18px 35px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.3rem; box-shadow: 0 4px 15px rgba(37,211,102,0.4); margin-top: 15px; }
+        footer { background-color: #222222; color: #ffffff; padding: 20px; margin-top: 60px; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
     <header>
-        <nav class="navbar">
-            <a href="#" class="logo">Loycamia</a>
-            <ul class="nav-links">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#productos">Catálogo</a></li>
-            </ul>
-        </nav>
+        <a href="#" class="logo">Loycamia</a>
     </header>
 
     <section class="hero">
-        <h1>Muebles Artesanales Exclusivos</h1>
-        <p>Carpintería a medida con acabados de alta calidad para darle calidez y diseño único a tus espacios.</p>
-        <a href="#productos" class="btn-catalog">Ver Catálogo</a>
+        <h1>Muebles Artesanales a Medida</h1>
+        <p>Diseño exclusivo en madera y carpintería de alta calidad para dar vida a tus espacios.</p>
     </section>
 
-    <section class="products-section" id="productos">
-        <h2>Línea de Fabricación</h2>
-        <p class="section-subtitle">Trabajos hechos a mano con maderas seleccionadas</p>
+    <div class="container">
+        <h2>Nuestro Catálogo de Fabricación</h2>
         <div class="grid">
             <div class="card">
-                <div class="card-img img-1"></div>
-                <div class="card-content">
-                    <h3>Comedores y Salón</h3>
-                    <p>Mesas robustas, cubiertas cepilladas y racks artesanales diseñados para destacar la veta natural de la madera.</p>
-                </div>
+                <h3>Comedores y Salón</h3>
+                <p>Mesas sólidas, sillas y racks artesanales fabricados a mano en maderas seleccionadas.</p>
             </div>
             <div class="card">
-                <div class="card-img img-2"></div>
-                <div class="card-content">
-                    <h3>Escritorios y Home Office</h3>
-                    <p>Mobiliario funcional e inteligente que combina la resistencia de la madera rústica con líneas modernas para tu comodidad diaria.</p>
-                </div>
+                <h3>Optimización de Espacios</h3>
+                <p>Escritorios, repisas y clósets inteligentes diseñados a medida para aprovechar tu hogar.</p>
             </div>
             <div class="card">
-                <div class="card-img img-3"></div>
-                <div class="card-content">
-                    <h3>Proyectos Especiales</h3>
-                    <p>Diseñamos y fabricamos cualquier estructura o mueble que imagines a la medida exacta de tu espacio y presupuesto.</p>
-                </div>
+                <h3>Terrazas y Exterior</h3>
+                <p>Mobiliario resistente fabricado en maderas tratadas y nativas duraderas para el exterior.</p>
             </div>
         </div>
-    </section>
 
-    <a href="https://wa.me" class="whatsapp-btn" target="_blank">
-        💬 Cotizar por WhatsApp
-    </a>
+        <div class="contact-section">
+            <h3>¿Tienes un proyecto en mente?</h3>
+            <p>Haz clic abajo para conversar directamente conmigo por WhatsApp y cotizar tu mueble a medida.</p>
+            <a href="https://wa.me" class="whatsapp-link" target="_blank">
+                💬 Presiona aquí para hablar por WhatsApp
+            </a>
+        </div>
+    </div>
 
     <footer>
-        <p>© 2026 Loycamia - Muebles de Madera & Diseños a Medida</p>
+        <p>© 2026 Loycamia - Diseños exclusivos a medida</p>
     </footer>
 
 </body>
